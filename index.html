@@ -175,21 +175,39 @@
         </div>
       </div>
 
+      <div class="image-card">
+        <div class="image-left">
+          <a href="https://test-menteur-magie.vercel.app/" target="_blank">
+            <img
+              src="/images/TestMenteur.png"
+              alt="SiteFranckLamy"
+            />
+          </a>
+        </div>
+        <div class="image-right">
+          <h1>Expérience interactive de mentalisme</h1>
+          <p>
+            Découvrez une expérience interactive de mentalisme où l’ordinateur devine l’objet auquel vous pensez parmi quatre images. Laissez-vous surprendre par la précision de cette magie numérique ! Avec son design vintage et ses interactions captivantes, chaque réponse modifie le résultat final, rendant chaque session unique et fascinante.
+          </p>
+        </div>
+      </div>
+
     </section>
 
     <section>
       <div class="formulaire">
-        <h1>Demande de contact</h1>
-        <form action="post">
-          <input type="text" placeholder="Votre nom" class="input-field"><br>
-          <input type="text" placeholder="Votre prénom" class="input-field"><br>
-          <textarea name="message" id="message" placeholder="Votre message" class="textarea-field"></textarea><br>
-          <button type="submit" class="submit-button">Envoyer</button>
-        </form>
+          <h1>Demande de contact</h1>
+          <form id="contactForm" method="POST" action="http://localhost/Portefolio/submit_form.php" required>
+              <input type="text" name="nom" placeholder="Votre nom" class="input-field" required><br>
+              <input type="text" name="prenom" placeholder="Votre prénom" class="input-field" required><br>
+              <input type="email" name="email" placeholder="Votre mail" class="input-field" required><br>
+              <textarea name="message" id="message" placeholder="Votre message" class="textarea-field" required></textarea><br>
+              <button type="submit" class="submit-button">Envoyer</button>
+          </form>
       </div>
-    </section>
-    
-    <footer>
+  </section>
+  
+      <footer>
       <h3>
         <span class="material-symbols-outlined">
           magic_button

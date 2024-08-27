@@ -13,3 +13,4 @@ function changeDarkMode() {
     document.getElementById("dark-light-mode").innerHTML = "Light mode";
   }
 }
+
