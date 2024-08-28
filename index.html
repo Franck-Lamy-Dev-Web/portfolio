@@ -168,7 +168,7 @@
           </a>
         </div>
         <div class="image-right">
-          <h1>Site de magie et de mentamisme</h1>
+          <h1>Site de magie et de mentalisme</h1>
           <p>
             Bienvenue sur mon site, que j'ai entièrement développé pour vous plonger dans l'univers de mes spectacles. Je suis Franck Lamy, artiste avec plus de 25 ans d'expérience en magie, mentalisme, et ventriloquie. Ce site vous offre une navigation fluide pour découvrir mes prestations, visualiser mes performances et me contacter pour transformer vos événements en expériences inoubliables. Explorez et laissez-vous emporter par la magie de mes spectacles !
           </p>
@@ -218,4 +218,24 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const status = urlParams.get('status');
+  
+          if (status === 'success') {
+              displayMessage('Votre message a été envoyé avec succès !', 'success-message');
+          } else if (status === 'error') {
+              displayMessage('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.', 'error-message');
+          }
+  
+          function displayMessage(message, className) {
+              const messageDiv = document.createElement('div');
+              messageDiv.className = className;
+              messageDiv.textContent = message;
+              document.body.insertBefore(messageDiv, document.body.firstChild);
+          }
+      });
+  </script>
+  
   </body>
