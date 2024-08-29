@@ -40,3 +40,30 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   });
 });
 
+
+// Changement d'état du curseur
+document.addEventListener('DOMContentLoaded', (event) => {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const modeLabel = document.getElementById('modeLabel');
+
+  // Initial setup based on local storage or default
+  updateModeLabel(darkModeToggle.checked);
+
+  // Toggle dark/light mode
+  function changeDarkMode() {
+      const isDarkMode = darkModeToggle.checked;
+      updateModeLabel(isDarkMode);
+      // Optionally, add code here to actually toggle dark mode on the site
+  }
+
+  function updateModeLabel(isDarkMode) {
+      if (isDarkMode) {
+          modeLabel.textContent = 'Light mode';
+      } else {
+          modeLabel.textContent = 'Dark mode';
+      }
+  }
+
+  darkModeToggle.addEventListener('change', changeDarkMode);
+});
+

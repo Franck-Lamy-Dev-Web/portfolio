@@ -17,22 +17,30 @@
 
     <nav>
       <h1>
-        <span class="material-symbols-outlined">
-          magic_button
-        </span>
-        Franck Lamy
+          <span class="material-symbols-outlined">
+              magic_button
+          </span>
+          Franck Lamy
       </h1>
       <ul>
-        <li>
-         lamy.franck@hotmail.com
-          <span class="material-symbols-outlined">
-            call_made
-          </span>
-        </li>
-        <li id="dark-light-mode" onclick="changeDarkMode()">Dark mode</li>
+          <li>
+              lamy.franck@hotmail.com
+              <span class="material-symbols-outlined">
+                  call_made
+              </span>
+          </li>
+          <li class="switch2">
+              <div class="dark-light-toggle">
+                  <label class="switch">
+                      <input type="checkbox" id="darkModeToggle" onclick="changeDarkMode()">
+                      <span class="slider round"></span>
+                  </label>
+                  <span id="modeLabel">Light mode</span>
+              </div>
+          </li>
       </ul>
-    </nav>
-
+  </nav>
+      
     <header>
       <div class="header-left">
         <h1>Franck Lamy</h1>
