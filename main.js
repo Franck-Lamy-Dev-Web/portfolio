@@ -20,11 +20,19 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
   const formData = new FormData(this);
 
-  fetch('http://localhost/Portefolio/submit_form.php', {
+  fetch('https://webdev.francklamy.com/Backend/submit_form.php', {
       method: 'POST',
       body: formData,
   })
-  .then(response => response.json())
+  .then(response => {
+      // Vérifiez si la réponse est en JSON
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+          return response.json(); // Parse le JSON
+      } else {
+          throw new Error("La réponse n'est pas en JSON");
+      }
+  })
   .then(data => {
       if (data.message) {
           // Remplace le formulaire par un message de succès
@@ -39,6 +47,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       document.querySelector('.formulaire').innerHTML = '<p class="error-message">Une erreur est survenue lors de l\'envoi de votre demande.</p>';
   });
 });
+
 
 
 // Changement d'état du curseur
